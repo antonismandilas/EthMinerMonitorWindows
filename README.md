@@ -11,5 +11,12 @@ Happy sharing!
 
 __________________________________________________________________________________________
 
+## Leave a Tip
 
-Tips: Eth 0x840905763C937B8238a0a5C58015344Ffe64ca70
+I would be happy about a small donation. Thank you very much.
+
+Eth 0x840905763C937B8238a0a5C58015344Ffe64ca70
+
+## Prerequisites
+
+* Installed && configured ethminer - https://github.com/ethereum-mining/ethminer
