@@ -2,7 +2,8 @@
 
 . "<PATH_TO_SCRIPTS>\Invoke-JsonRPC.ps1"
 
-$temp = ""
+$EthMinerAddress='127.0.0.1'
+$EthMinerPort=3333
 
 $response = Invoke-RestMethod -Uri 'https://api.ethermine.org/miner/<YOUR_ETH_ADDRESS>/currentStats' -DisableKeepAlive
 
@@ -19,7 +20,7 @@ $Body += "Average hashrate the last 24 hours`n============================`n" + 
 $Body += "Current hashrate `n============================`n" + $response.data.currentHashrate + "`n`n"
 
 $Body += "ethminer stats `n============================`n"
-$RPCResult = Invoke-JsonRPC '127.0.0.1' 3333 '{"method": "miner_getstat1", "jsonrpc": "2.0", "id": 5 }'
+$RPCResult = Invoke-JsonRPC $EthMinerAddress $EthMinerPort '{"method": "miner_getstat1", "jsonrpc": "2.0", "id": 5 }'
 $ResultJsonObject = ConvertFrom-Json -InputObject $RPCResult
 
 $Body = $Body + "Shares: " + $ResultJsonObject.result[1] + " - GPU(s) Hash Rate(s): " + $ResultJsonObject.result[3]
