@@ -1,3 +1,5 @@
+# ANTONIS MANDILAS 2018
+
 . "<PATH_TO_SCRIPTS>\Invoke-JsonRPC.ps1"
 
 $temp = ""

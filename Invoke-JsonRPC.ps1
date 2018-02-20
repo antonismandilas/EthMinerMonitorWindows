@@ -1,3 +1,6 @@
+# ANTONIS MANDILAS 2018
+# Function for invoking JsonRPC service under windows 10.
+
 function Invoke-JsonRPC {
 	Param(
 		[parameter(Mandatory=$true)]

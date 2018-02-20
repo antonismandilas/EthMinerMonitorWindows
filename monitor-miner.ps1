@@ -1,6 +1,14 @@
+# ANTONIS MANDILAS 2018
+# The script produces a log file per day, every time it is executed it writes a result in a file.
+# It invokes the JsonRPC endpoint of ethminer to monitor the GPUs. If any of them reports a 0 hash rate restarts the miner.
+# When the scripts fails to connet to the miner, it issues a restart of the. 
+# All commands are conifgurable.
+
 $Logfile = ".\$(gc env:computername)-" + (Get-Date -Format "yyyy-MM-dd") +".log"
 $MinerExecutionCommand = '<PATH_TO_SCRIPT>\launch-ethminer.bat'
 $MinerRestartCommand='<PATH_TO_SCRIPT>\restart.bat'
+$EthMinerAddress='127.0.0.1'
+$EthMinerPort=3333
 
 Function LogWrite
 {
@@ -59,7 +67,7 @@ function Invoke-JsonRPC {
 
 LogWrite (Get-Date -Format g)
 
-$RPCResult = Invoke-JsonRPC '127.0.0.1' 3333 '{"method": "miner_getstat1", "jsonrpc": "2.0", "id": 5 }'
+$RPCResult = Invoke-JsonRPC $EthMinerAddress $EthMinerPort '{"method": "miner_getstat1", "jsonrpc": "2.0", "id": 5 }'
 
 $ResultJsonObject = ConvertFrom-Json -InputObject $RPCResult
 

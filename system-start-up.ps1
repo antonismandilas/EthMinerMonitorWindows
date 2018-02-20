@@ -1,3 +1,5 @@
+# ANTONIS MANDILAS 2018
+
 $response = Invoke-RestMethod -Uri 'https://api.ethermine.org/miner/<YOUR_ETH_ADDRESS>/currentStats' -DisableKeepAlive
 
 $Body = "Unpaid balance`n============================`n" + $response.data.unpaid + "`n`n"
