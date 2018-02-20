@@ -7,6 +7,8 @@ For get pool statistics the API from https://ethermine.org is used and the resul
 
 There is also an implementation for invoking JsonRPC endpoint and read the current statistics of the ethminer. In case something is wrong (ex. 0 h/s), the ethminer is restarted automatically.
 
+The scripts can be invoked through the windows task scheduler.
+
 Happy sharing!
 
 __________________________________________________________________________________________
