@@ -1,4 +1,6 @@
 # ANTONIS MANDILAS 2018
+# version v1.0.0
+
 # The script produces a log file per day, every time it is executed it writes a result in a file.
 # It invokes the JsonRPC endpoint of ethminer to monitor the GPUs. If any of them reports a 0 hash rate restarts the miner.
 # When the scripts fails to connet to the miner, it issues a restart of the. 

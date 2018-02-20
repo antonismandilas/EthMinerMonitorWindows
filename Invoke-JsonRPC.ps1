@@ -1,4 +1,6 @@
 # ANTONIS MANDILAS 2018
+# version v1.0.0
+
 # Function for invoking JsonRPC service under windows 10.
 
 function Invoke-JsonRPC {

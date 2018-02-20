@@ -1,4 +1,5 @@
 # ANTONIS MANDILAS 2018
+# version v1.0.0
 
 $response = Invoke-RestMethod -Uri 'https://api.ethermine.org/miner/<YOUR_ETH_ADDRESS>/currentStats' -DisableKeepAlive
 

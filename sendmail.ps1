@@ -1,4 +1,5 @@
 # ANTONIS MANDILAS 2018
+# version v1.0.0
 
 . "<PATH_TO_SCRIPTS>\Invoke-JsonRPC.ps1"
 
