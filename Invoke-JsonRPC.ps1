@@ -1,7 +1,7 @@
 # ANTONIS MANDILAS 2018
-# version v1.0.0
+# version v1.0.1
 
-# Function for invoking JsonRPC service under windows 10.
+. ".\LogWrite.ps1"
 
 function Invoke-JsonRPC {
 	Param(
@@ -21,25 +21,25 @@ function Invoke-JsonRPC {
 	$writer = New-Object System.IO.StreamWriter($tcpStream)
 	$writer.AutoFlush = $true
 
-	if ($tcpConnection.Connected)
-	{
+	if ($tcpConnection.Connected) {
 		$writer.WriteLine($RPCCommand)
 
-		if ($tcpStream.DataAvailable)
-		{
+		if ($tcpStream.DataAvailable) {
 			$result = $reader.ReadLine()
 		} else {
-			Write-Host 'No Data available!!!!!'
-		}
+			LogWrite 'No Data available!!!!!'
 
-	} else
-	{
-			Write-Host 'TCP NOT CONNECTED!!!'
+			$result = "{'error' : 'no-data-available'}";
+		}
+	} else {
+		LogWrite 'TCP NOT CONNECTED!!!'
+
+		$result = "{'error' : 'tcp-not-connected'}";
 	}
 
 	$reader.Close()
 	$writer.Close()
 	$tcpConnection.Close()
-	
+
 	return $result
 }

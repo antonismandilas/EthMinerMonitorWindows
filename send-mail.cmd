@@ -1,4 +1,4 @@
 REM ANTONIS MANDILAS 2018
-REM version v1.0.0
+REM version v1.0.1
 
-powershell.exe -executionpolicy bypass "& '<PATH_TO_SCRIPT>\sendmail.ps1'"
+powershell.exe -executionpolicy bypass "& '.\sendmail.ps1'"
